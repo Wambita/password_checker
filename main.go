@@ -22,7 +22,19 @@ func checkPasswordStrength (password string) string {
     }
     }
 
-  
-  
+    if length >= 10 && hasLetter && hasNumber && hasSpecial {
+    return "Strong"
+  } else if length >= 8 && hasLetter && hasNumber {
+    return "Medium"
+  } 
+  return "Weak"
+  }
+
+func main (){
+var password string
+fmt.Print("Enter password: ")
+fmt.Scanln(&password)
+strength := checkPasswordStrength(password)
+fmt.Println("Password strenth is:", strength)  
   
 }
